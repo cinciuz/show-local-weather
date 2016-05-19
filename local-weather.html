@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<div>
+  <p class="prova"></p>
+        <button id = "getMessage" class = "btn btn-primary">
+        Get Message
+      </button>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script>
+  var url = "api.openweathermap.org/data/2.5/weather?q=London&APPID=1daa265a6a3b70411a7fde5a49aacb5e";
+
+  $(document).ready(function(){
+//        $("#getMessage").on("click", function(){
+
+    $.getJSON(url,getweather);
+  });
+
+  var getweather = function(data) {
+    $(".prova").html(data.coord);
+  };
+//});
+
+</script>
+</body>
+</html>
