@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+
 </head>
 <body>
 
@@ -14,7 +15,12 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script>
-  var url = "api.openweathermap.org/data/2.5/weather?q=London&APPID=1daa265a6a3b70411a7fde5a49aacb5e";
+
+
+
+  var url = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=1daa265a6a3b70411a7fde5a49aacb5e";
+
+  //"http://ip-api.com/json/?fields=countryCode,city,status,message&APPID={80b3eb08a133d820aecc7c2623aa99e3}"
 
   $(document).ready(function(){
 //        $("#getMessage").on("click", function(){
@@ -23,7 +29,8 @@
   });
 
   var getweather = function(data) {
-    $(".prova").html(data.coord);
+    $(".prova").html(JSON.stringify(data));
+    console.log(JSON.stringify(data));
   };
 //});
 
